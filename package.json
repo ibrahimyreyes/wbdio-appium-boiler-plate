@@ -22,11 +22,13 @@
     "url": "https://github.com/webdriverio/jasmine-boilerplate/issues"
   },
   "scripts": {
-    "lint": "eslint .",
-    "test": "npm run typecheck && npm run lint && npm run test:local",
-    "typecheck": "tsc --noEmit",
-    "test:local": "wdio run wdio.local.conf.ts",
-    "test:sauce": "wdio run wdio.sauce.conf.ts"
+  "lint": "eslint .",
+  "test": "npm run typecheck && npm run lint && npm run test:local",
+  "typecheck": "tsc --noEmit",
+  "test:local": "wdio run wdio.local.conf.ts",
+  "test:gui": "GUI=true wdio run wdio.local.conf.ts",
+  "test:headless": "GUI=false wdio run wdio.local.conf.ts",
+  "test:sauce": "wdio run wdio.sauce.conf.ts"
   },
   "devDependencies": {
     "@types/jasmine": "^5.1.9",
