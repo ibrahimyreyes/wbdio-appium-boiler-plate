@@ -106,7 +106,18 @@ export const config: Omit<WebdriverIO.Config, 'capabilities'> = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec'],
+    reporters: [
+        'spec',
+        ['allure', {
+            outputDir: 'allure-results',
+            disableWebdriverStepsReporting: false,
+            disableWebdriverScreenshotsReporting: false
+        }],
+        ['video', {
+            saveAllVideos: true,       // If true, also saves videos for successful test cases
+            videoSlowdownMultiplier: 3 // Higher value slows down video playback
+        }]
+    ],
     //
     // Options to be passed to Jasmine.
     jasmineOpts: {

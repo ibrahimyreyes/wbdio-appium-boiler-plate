@@ -18,6 +18,10 @@ lib-cov
 coverage
 
 # nyc test coverage
+
+# Allure report and results
+allure-report/
+allure-results/
 .nyc_output
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
